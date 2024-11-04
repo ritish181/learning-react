@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    margin: auto;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupForm{
+    height: 400px;
+    width: 300px;
+    margin: auto;
+    display: flex;
+    border: 2px solid rgb(0, 0, 0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+}
