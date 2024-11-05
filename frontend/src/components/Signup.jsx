@@ -16,6 +16,8 @@ const Signup = () => {
           <input type="text" placeholder='email' className={styles.input} />
           <input type="password" placeholder='password' className={styles.input} />
           <button type="submit" className={styles.submitButton}>Sign Up</button>
+
+          <p>Already Registered?<a href="/login">login here</a></p>
         </form>
       </div>
     </div>

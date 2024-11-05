@@ -1,4 +1,4 @@
-import mongoose, { model } from "mongoose";
+import mongoose from "mongoose";
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -30,6 +30,6 @@ const LoginSchema = new mongoose.Schema({
 {timestamps: true}
 )
 
-const collection = new nomgoose.model("Collection1", LoginSchema);
+const collection = new mongoose.model("Collection1", LoginSchema);
 
-model.exports= collection;
+export default collection;

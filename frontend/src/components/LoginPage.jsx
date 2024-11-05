@@ -42,7 +42,7 @@ const LoginPage = () => {
           <label htmlFor={styles.password} >Password:</label>
           <input id="password"  className={styles.password} type="password" value={password} onChange={handlePasswordChange}/><br />
           <button type='submit' >login</button>
-          <p className={styles.forgetPassword}>Forgot Password ?<a href="/signup">click here</a></p>
+          <p className={styles.forgetPassword}>New User ?<a href="/signup">register here</a></p>
         </form>
           <p>or log in using</p>
           <div className={styles.loginFooter}>
