@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {Route, Routes, BrowserRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import 'react-toastify/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
