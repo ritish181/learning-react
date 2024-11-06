@@ -10,7 +10,7 @@ export const signupValidation = (req, res, next) => {
     const { error }  = schema.validate(req.body);
     if(error){
         return res.status(400)
-        .json({Message: "Bad request", error});
+        .json({message: "Bad request", error});
     }
 
     next();
@@ -24,7 +24,7 @@ export const loginValidation = (req, res, next) => {
     const { error } = schema.validate(req.body);
     if(error){
         return res.status(400)
-        .json({Message: "Bad request", error});
+        .json({message: "Bad request", error});
     }
     next();
 };
