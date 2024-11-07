@@ -59,7 +59,7 @@ const Signup = () => {
     <div className={styles.container}>
       <div className={styles.signupForm}>
         <form onSubmit={handleSignUp} className={styles.form}>
-          <h2>Sign Up</h2>
+          <h2 className={styles.signUpHeading}>Sign Up</h2>
           <input
             type="text"
             onChange={handleChange}

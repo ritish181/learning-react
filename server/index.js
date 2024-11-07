@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import authRouter from './routes/authRoute.js';
+import userRouter from './routes/userRoute.js';
 
 dotenv.config();
 const app = express();
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 app.use(cors());  
 
 app.use('/auth', authRouter);
+app.use('/users', userRouter);
 
 app.listen(PORT,()=>{
     console.log(`server running on port: ${PORT}`);

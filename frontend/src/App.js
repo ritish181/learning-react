@@ -1,24 +1,29 @@
 import './App.css';
 import Home from './components/Home';
 import LoginPage from './components/LoginPage';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Signup from './components/Signup';
 import { useState } from 'react';
+import RefreshHandler from './RefreshHandler';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const PrivateBrowsing = ()=> {
-    
+  const PrivateBrowsing = ( { element } )=> {
+    return isAuthenticated ? element : <Navigate to='/login' />;
   };
 
+  
   return (
-      <Routes>
-        <Route path='/' element = {<LoginPage />} />
-        <Route path='/login' element = {<LoginPage />} />
-        <Route path='/home' element = {<Home />} />
-        <Route path='/signup' element = {<Signup />} />
-      </Routes>
+    <div>
+        <RefreshHandler setIsAuthenticated = {setIsAuthenticated}/>
+        <Routes>
+          <Route path='/' element = {<LoginPage />} />
+          <Route path='/login' element = {<LoginPage />} />
+          <Route path='/home' element = {<PrivateBrowsing element= {<Home />}  />} />
+          <Route path='/signup' element = {<Signup />} />
+        </Routes>
+    </div>
   );
 }
 

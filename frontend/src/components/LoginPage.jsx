@@ -13,15 +13,15 @@ import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const [logInInfo, setLogInInfo] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   const navigate = useNavigate();
-  
+
   const handleLogIn = async (e) => {
     e.preventDefault();
     const { email, password } = logInInfo;
-    if ( !email || !password ){
+    if (!email || !password) {
       return handleFailure("All fields are required.");
     }
     try {
@@ -36,15 +36,12 @@ const LoginPage = () => {
         setTimeout(() => {
           navigate("/home");
         }, 1000);
-        localStorage.setItem('token', jwtToken);
-        localStorage.setItem('loggedInUser', name);
-      } 
-      else if (error) {
+        localStorage.setItem("token", jwtToken);
+        localStorage.setItem("loggedInUser", name);
+      } else if (error) {
         const details = error?.details[0].message;
         handleFailure(details);
-      }
-      else if(!success)
-      {
+      } else if (!success) {
         handleFailure(message);
       }
     } catch (error) {
@@ -65,8 +62,6 @@ const LoginPage = () => {
       <div className={styles.loginContainer}>
         <form onSubmit={handleLogIn} className={styles.loginForm}>
           <h3 className={styles.loginHeading}>Login</h3>
-          <br />
-          <label htmlFor="email">Email:</label>
           <input
             id="email"
             autoFocus
@@ -77,8 +72,6 @@ const LoginPage = () => {
             onChange={handleChange}
             placeholder="email"
           />
-          <br />
-          <label htmlFor="password">Password:</label>
           <input
             id="password"
             name="password"
@@ -88,13 +81,11 @@ const LoginPage = () => {
             onChange={handleChange}
             placeholder="password"
           />
-          <br />
           <button type="submit">login</button>
           <p className={styles.forgetPassword}>
             New User ?<a href="/signup">register here</a>
           </p>
         </form>
-        <ToastContainer />
         <p>or log in using</p>
         <div className={styles.loginFooter}>
           <img className={styles.image} src={Google} alt="" />
